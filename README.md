@@ -1,8 +1,8 @@
-# CITATION.cff Generator: User Guide
+# CITATION.cff Generator
 
 ## Website available at
 
-
+[https://cff-hlvarona.pages.dev](https://cff-hlvarona.pages.dev)
 
 ## 1. Overview
 
