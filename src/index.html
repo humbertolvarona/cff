@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITATION.cff Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CITATION.cff Generator</h1>
+            <div class="theme-selector">
+                <button id="light-theme" title="Light Theme"></button>
+                <button id="dark-theme" title="Dark Theme"></button>
+                <button id="blue-light-theme" title="Blue Light Protection Theme"></button>
+            </div>
+        </header>
+
+        <section id="info-section">
+            <h2>What is a CITATION.cff file?</h2>
+            <p>A CITATION.cff file is a plain text file with human- and machine-readable citation information for software and datasets. When you add a CITATION.cff file to the root of a repository, you make it easier for others to cite your work.</p>
+        </section>
+
+        <main>
+            <div class="form-container">
+                <form id="cff-form">
+                    <div class="form-group">
+                        <label for="title">Title <span class="required">*</span></label>
+                        <input type="text" id="title" required>
+                    </div>
+
+                    <div id="authors-container">
+                        <label>Authors <span class="required">*</span></label>
+                        <div class="author-entry">
+                            <input type="text" placeholder="Given Name" class="author-given-name">
+                            <input type="text" placeholder="Family Name" class="author-family-name" required>
+                            <input type="email" placeholder="Email" class="author-email">
+                            <input type="text" placeholder="Affiliation" class="author-affiliation">
+                            <input type="text" placeholder="ORCID (e.g., 0000-0000-0000-0000)" class="author-orcid">
+                            <button type="button" class="remove-author" disabled>&times;</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-author">Add Author</button>
+
+                     <div class="form-group">
+                        <label for="message-select">Citation Message & Type</label>
+                        <select id="message-select">
+                            <option value="software">For Software</option>
+                            <option value="dataset">For a Dataset</option>
+                            <option value="book">For a Book</option>
+                            <option value="article">For an Article</option>
+                            <option value="report">For a Technical Report</option>
+                            <option value="book-chapter">For a Book Chapter</option>
+                            <option value="audio">For an Audio</option>
+                            <option value="map">For a Map</option>
+                            <option value="image">For an Image</option>
+                            <option value="video">For a Video</option>
+                            <option value="custom">Custom Message...</option>
+                        </select>
+                        <textarea id="message-custom" rows="3" class="hidden" placeholder="Enter your custom citation message."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="abstract">Abstract</label>
+                        <textarea id="abstract" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keywords">Keywords (comma-separated)</label>
+                        <input type="text" id="keywords">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="license">License</label>
+                        <select id="license-select">
+                            <option value="">- Select a license -</option>
+                            <option value="MIT">MIT</option>
+                            <option value="Apache-2.0">Apache 2.0</option>
+                            <option value="GPL-3.0-or-later">GNU GPLv3 or later</option>
+                            <option value="BSD-3-Clause">BSD 3-Clause</option>
+                            <option value="Unlicense">The Unlicense</option>
+                            <option value="Other">Other...</option>
+                        </select>
+                        <input type="text" id="license-custom" class="hidden" placeholder="Enter custom license identifier">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="version">Version</label>
+                        <input type="text" id="version">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date-released">Date Released</label>
+                        <input type="date" id="date-released">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="doi">DOI</label>
+                        <input type="text" id="doi">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="repository-code">Repository Code URL</label>
+                        <input type="url" id="repository-code">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="url">URL</label>
+                        <input type="url" id="url">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="preview-container">
+                <h2>Live Preview</h2>
+                <pre id="preview"></pre>
+                <div class="preview-actions">
+                    <button id="copy-button">Copy to Clipboard</button>
+                    <button id="download-button">Download CITATION.cff</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

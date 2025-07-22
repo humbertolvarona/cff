@@ -1,0 +1,261 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --border-color: #cccccc;
+    --input-bg: #f8f9fa;
+    --header-bg: #f1f1f1;
+    --button-bg: #e0e0e0;
+    --button-hover-bg: #d4d4d4;
+    --required-color: #dc3545;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #58a6ff;
+    --border-color: #444444;
+    --input-bg: #2a2a2a;
+    --header-bg: #252525;
+    --button-bg: #3a3a3a;
+    --button-hover-bg: #4a4a4a;
+}
+
+[data-theme="blue-light"] {
+    --bg-color: #fdf6e3;
+    --text-color: #654b23;
+    --primary-color: #cb4b16;
+    --border-color: #93a1a1;
+    --input-bg: #eee8d5;
+    --header-bg: #f5ead5;
+    --button-bg: #e9e0cb;
+    --button-hover-bg: #dcd3be;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.theme-selector {
+    display: flex;
+}
+
+/* --- THEME ICON STYLES START --- */
+.theme-selector button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: var(--text-color); /* Use text color to paint the icon */
+    -webkit-mask-size: 65%;
+    mask-size: 65%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: transform 0.2s;
+}
+.theme-selector button:hover {
+    transform: scale(1.1);
+}
+
+#light-theme {
+    -webkit-mask-image: url(icons/sun.svg);
+    mask-image: url(icons/sun.svg);
+}
+#dark-theme {
+    -webkit-mask-image: url(icons/moon.svg);
+    mask-image: url(icons/moon.svg);
+}
+#blue-light-theme {
+    -webkit-mask-image: url(icons/eclipse.svg);
+    mask-image: url(icons/eclipse.svg);
+}
+/* --- THEME ICON STYLES END --- */
+
+
+#info-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--input-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-container, .preview-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.required {
+    color: var(--required-color);
+}
+
+input[type="text"], input[type="url"], input[type="date"], input[type="email"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#authors-container .author-entry {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 4px;
+}
+#authors-container .author-entry input {
+    margin: 0;
+}
+
+#authors-container .author-entry .remove-author {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    color: var(--required-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+button {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+#add-author {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.preview-container h2 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+#preview {
+    background-color: var(--input-bg);
+    padding: 15px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 200px;
+    border: 1px solid var(--border-color);
+    font-family: "Courier New", Courier, monospace;
+}
+
+.preview-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+#license-custom, #message-custom {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    header {
+        align-items: flex-start;
+    }
+    h1 {
+        margin-bottom: 15px;
+    }
+    .theme-selector {
+        margin-left: -10px;
+    }
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 500px) {
+    #authors-container .author-entry {
+        grid-template-columns: 1fr 1fr;
+        padding-right: 40px;
+    }
+    #authors-container .author-entry .author-affiliation,
+    #authors-container .author-entry .author-orcid {
+        grid-column: 1 / -1;
+    }
+}
