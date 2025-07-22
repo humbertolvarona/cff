@@ -30,8 +30,8 @@ This form contains all the fields needed to generate a comprehensive `CITATION.c
 
 | Field Name | Description | Example / Notes |
 | --- | --- | --- |
-| **Title** `*` | The main title of your project, software, or dataset. | `My Awesome Data Analysis Tool` |
-| **Authors** `*` | The individuals who created the work. Each author is a separate entry. | See section 3.2 for details. |
+| **Title** | The main title of your project, software, or dataset. | `My Awesome Data Analysis Tool` |
+| **Authors** | The individuals who created the work. Each author is a separate entry. | See section 3.2 for details. |
 | **Citation Message & Type** | A dropdown to select the type of work you are citing. This automatically sets a default citation message and the `type` field in the final file. | `For a Dataset` will set the type to `dataset`. |
 | **Abstract** | A brief summary or description of the work. This helps others quickly understand the purpose and scope of your project. | `A Python library for analyzing...` |
 | **Keywords** | A list of relevant keywords to improve discoverability. | Enter as a comma-separated list: `data science, visualization, python` |
